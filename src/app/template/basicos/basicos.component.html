@@ -39,13 +39,13 @@
             <div class="mb-3 row">
                 <label class="col-sm-3 col-form-label">Existencias</label>
                 <div class="col-sm-9">
-                    <input type="number" class="form-control" ngModel name="existencias" placeholder="Existencias del producto">
+                    <input type="number" class="form-control" ngModel name="existencias" CustomMin [minimo]="0" placeholder="Existencias del producto" required>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col">
-                    <button type="submit" class="btn btn-primary float-end">
+                    <button type="submit" [disabled]="miFormulario.invalid" class="btn btn-primary float-end">
                         Guardar
                     </button>
                 </div>
@@ -69,6 +69,9 @@
 
         <span>VALUE</span>
         <pre>{{miFormulario.value | json }}</pre>
+        
+        <span>CustomDirective</span>
+        <pre>{{miFormulario.controls.existencias?.errors | json }}</pre>
 
     </div>
 </div>
