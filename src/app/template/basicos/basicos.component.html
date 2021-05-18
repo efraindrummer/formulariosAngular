@@ -28,6 +28,10 @@
                 <label class="col-sm-3 col-form-label">Precio</label>
                 <div class="col-sm-9">
                     <input type="number" class="form-control" ngModel name="precio" placeholder="Precio del producto">
+
+                    <span class="form-text text-danger" *ngIf="precioValido()">
+                        El precio debe de ser 0 o mayor
+                    </span>
                 </div>
             </div>
 
