@@ -16,11 +16,15 @@ export class BasicosComponent {
   }); */
 
   miFormulario: FormGroup = this.fb.group({
-    nombre: [ 'RTX 4080TI' , [Validators.required, Validators.minLength(3)], ],
-    precio: [ 0, [Validators.required, Validators.min(0)]],
-    existencias: [ 0 , [Validators.required, Validators.min(0)]],
+    nombre     : [ , [Validators.required, Validators.minLength(3)]],
+    precio     : [ , [Validators.required, Validators.min(0)]],
+    existencias: [ , [Validators.required, Validators.min(0)]],
   })
 
   constructor(private fb: FormBuilder) { }
+
+  campoEsValido( campo: string ){
+    return this.miFormulario.controls[campo].errors && this.miFormulario.controls[campo].touched;
+  }
 
 }
