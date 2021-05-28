@@ -40,7 +40,7 @@
             <div class="input-group mb-1" *ngFor="let favorito of favoritosArr.controls; let i = index">
                 
                 <input class="form-control" [formControlName]="i">
-                <button class="btn btn-outline-danger" type="button" >
+                <button class="btn btn-outline-danger" type="button" (click)="borrar(i)" >
                     Eliminar
                 </button>
             
